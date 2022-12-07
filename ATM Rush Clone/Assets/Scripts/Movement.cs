@@ -13,11 +13,18 @@ public class Movement : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // 240.440 ve 249.440
     void Update()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        
-        transform.Translate(new Vector3(horizontal * horizontalSpeed * Time.deltaTime, 0, movementSpeed * Time.deltaTime));
+        if (transform.position.x > 240.440f && transform.position.x < 249.440f)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+
+            transform.Translate(new Vector3(horizontal * horizontalSpeed * Time.deltaTime, 0, movementSpeed * Time.deltaTime));
+        }
+        else
+        {
+            transform.Translate(new Vector3(horizontal * -horizontalSpeed * Time.deltaTime, 0, movementSpeed * Time.deltaTime));
+        }
     }
 }
