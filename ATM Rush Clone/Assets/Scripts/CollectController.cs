@@ -19,6 +19,8 @@ public class CollectController : MonoBehaviour
                 money.GetComponent<CollectController>().lastMoney = other.gameObject;
             }
 
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CollectController>().lastMoney = other.gameObject;
+
             other.gameObject.tag = "Collected";
             other.gameObject.GetComponent<BoxCollider>().isTrigger = false;
         }
