@@ -20,7 +20,7 @@ public class CollectController : MonoBehaviour
             }
 
             other.gameObject.tag = "Collected";
-            gameObject.GetComponent<BoxCollider>().isTrigger = false;
+            other.gameObject.GetComponent<BoxCollider>().isTrigger = false;
         }
      
     }
