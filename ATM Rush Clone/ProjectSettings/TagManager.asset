@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Collected
   - Collectable
+  - Door
+  - Counter
+  - ATM
   layers:
   - Default
   - TransparentFX
