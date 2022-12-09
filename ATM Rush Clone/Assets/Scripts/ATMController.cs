@@ -26,11 +26,11 @@ public class ATMController : MonoBehaviour
             Destroy(other.gameObject);
             foreach(GameObject ATM in GameObject.FindGameObjectsWithTag("ATM"))
             {
-                if (other.GetComponent<ChangeMaterial>().material == "Gold")
+                if (other.GetComponent<CollectController>().material == "Gold")
                 {
                     ATM.GetComponent<ATMController>().count += 2;
                 }
-                else if (other.GetComponent<ChangeMaterial>().material == "Diamond")
+                else if (other.GetComponent<CollectController>().material == "Diamond")
                 {
                     ATM.GetComponent<ATMController>().count += 3;
                 }

@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 13446514}
   - component: {fileID: 13446513}
   - component: {fileID: 13446517}
+  - component: {fileID: 13446518}
   m_Layer: 0
   m_Name: Door
   m_TagString: Door
@@ -237,6 +238,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &13446518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13446512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e13932d804c7c468ba9cb706bc5b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldMaterial: {fileID: 2100000, guid: 2978ae04774b1a8428392fbb2b5ab7ee, type: 2}
+  diamondMaterial: {fileID: 2100000, guid: 32f16a3a24d6217438370347ef0dc13d, type: 2}
 --- !u!1 &258851149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,6 +1411,7 @@ GameObject:
   - component: {fileID: 711129696}
   - component: {fileID: 711129695}
   - component: {fileID: 711129694}
+  - component: {fileID: 711129699}
   m_Layer: 0
   m_Name: Door (1)
   m_TagString: Door
@@ -1497,6 +1513,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &711129699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711129692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e13932d804c7c468ba9cb706bc5b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goldMaterial: {fileID: 2100000, guid: 2978ae04774b1a8428392fbb2b5ab7ee, type: 2}
+  diamondMaterial: {fileID: 2100000, guid: 32f16a3a24d6217438370347ef0dc13d, type: 2}
 --- !u!1 &726513222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4523,7 +4553,6 @@ GameObject:
   - component: {fileID: 2096502962}
   - component: {fileID: 2096502967}
   - component: {fileID: 2096502966}
-  - component: {fileID: 2096502969}
   - component: {fileID: 2096502968}
   m_Layer: 0
   m_Name: FirstMoney
@@ -4653,18 +4682,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastMoney: {fileID: 2096502961}
---- !u!114 &2096502969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096502961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6d230e1e69ced642a6874378f51b8f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goldMaterial: {fileID: 2100000, guid: 2978ae04774b1a8428392fbb2b5ab7ee, type: 2}
-  diamondMaterial: {fileID: 2100000, guid: 32f16a3a24d6217438370347ef0dc13d, type: 2}
   material: Money
