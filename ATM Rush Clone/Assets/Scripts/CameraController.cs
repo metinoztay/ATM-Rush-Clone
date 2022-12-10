@@ -8,28 +8,29 @@ public class CameraController : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset;
-    public float turnSpeed = 10f;
-    bool camFront = false;
+    float turnSpeed = 1.5f;
+    bool start = false; 
+
+    [SerializeField] GameObject gamePosition;
+    
 
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !camFront)
+        if (!start && Input.GetMouseButtonDown(0))
         {
-            
-
-            Vector3 direction = new Vector3(25, 0, 0) - new Vector3(-15,180,0);
-            transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(direction),Time.deltaTime*2);
-
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().movementSpeed = 5;
-            camFront = true;
-
+            start = true;
+            target.gameObject.GetComponent<Movement>().movementSpeed = 5f;
         }
+        else if (start)
+        {
 
+            transform.rotation = Quaternion.Lerp(transform.rotation, gamePosition.transform.rotation, Time.deltaTime * turnSpeed);
+            
+            transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime);
+        }
         
+
     }
-    private void LateUpdate()
-    {
-        transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime * 2);
-    }
+    
 }
