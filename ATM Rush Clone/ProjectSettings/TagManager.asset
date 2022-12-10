@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Counter
   - ATM
+  - CreditCard
   layers:
   - Default
   - TransparentFX
