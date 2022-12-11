@@ -10,6 +10,9 @@ TagManager:
   - Counter
   - ATM
   - CreditCard
+  - Money
+  - Gold
+  - Diamond
   layers:
   - Default
   - TransparentFX

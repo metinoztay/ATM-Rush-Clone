@@ -4,8 +4,29 @@ using UnityEngine;
 
 public class CreditCartMove : MonoBehaviour
 {
+    [SerializeField] Camera cam;
     bool goLeft = true;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, Mathf.Lerp(other.transform.position.z, other.transform.position.z - 30, Time.deltaTime * 5));
+            cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, Mathf.Lerp(cam.transform.position.z, cam.transform.position.z - 30, Time.deltaTime * 3));
+            other.GetComponent<CollectController>().lastMoney = other.gameObject;
+        }
+        else if(other.CompareTag("Collected"))
+        {
+            Destroy(other.gameObject);
+            foreach (GameObject collected in GameObject.FindGameObjectsWithTag("Collected"))
+            {
+
+                collected.GetComponent<CollectController>().lastMoney = other.GetComponent<NodeMovement>().connectedNode.gameObject;
+
+            }
+            GameObject.FindGameObjectWithTag("Player").GetComponent<CollectController>().lastMoney = other.GetComponent<NodeMovement>().connectedNode.gameObject;
+        }
+    }
     void Update()
     {
         if (goLeft)
@@ -26,7 +47,7 @@ public class CreditCartMove : MonoBehaviour
         {
             goLeft = true;
         }
-        
+
 
     }
 }

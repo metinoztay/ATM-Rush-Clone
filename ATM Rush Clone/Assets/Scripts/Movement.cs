@@ -8,15 +8,11 @@ public class Movement : MonoBehaviour
     [SerializeField] float horizontalSpeed;
 
     float horizontal;
-    void Start()
-    {
-        
-    }
 
-    // 240.440 ve 249.440
+    
     void Update()
     {
-        if (transform.position.x > 240.440f && transform.position.x < 249.440f)
+        if (transform.position.x > 240.7f && transform.position.x < 249.25f)
         {
             horizontal = Input.GetAxis("Horizontal");
 

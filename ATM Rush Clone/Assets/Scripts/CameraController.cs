@@ -12,15 +12,15 @@ public class CameraController : MonoBehaviour
     bool start = false; 
 
     [SerializeField] GameObject gamePosition;
-    
 
 
     void Update()
     {
+        
         if (!start && Input.GetMouseButtonDown(0))
         {
             start = true;
-            target.gameObject.GetComponent<Movement>().movementSpeed = 5f;
+            target.gameObject.GetComponentInParent<Movement>().movementSpeed = 7f;
         }
         else if (start)
         {
