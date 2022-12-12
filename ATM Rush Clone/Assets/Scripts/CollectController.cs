@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class CollectController : MonoBehaviour
 {
-    public GameObject lastMoney;
+    public GameObject lastOne;
     public string material = "Money";
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectable"))
         {
-
-            other.gameObject.transform.position = lastMoney.transform.position + Vector3.forward;
-            other.gameObject.AddComponent<NodeMovement>().connectedNode = lastMoney.transform;
-            other.gameObject.AddComponent<CollectController>().lastMoney = other.gameObject;
-
-            foreach (GameObject money in GameObject.FindGameObjectsWithTag("Collected"))
-            {
-                money.GetComponent<CollectController>().lastMoney = other.gameObject;
-            }
-
-            GameObject.FindGameObjectWithTag("Player").GetComponent<CollectController>().lastMoney = other.gameObject;
-
-            other.gameObject.tag = "Collected";
-            other.gameObject.GetComponent<BoxCollider>().isTrigger = false;
-
+            Collect(other);
         }
      
+    }
+
+    private void Collect(Collider other)
+    {
+        other.gameObject.transform.position = lastOne.transform.position + Vector3.forward;
+        other.gameObject.AddComponent<NodeMovement>().connectedNode = lastOne.transform;
+        other.gameObject.AddComponent<CollectController>().lastOne = other.gameObject;
+
+        foreach (GameObject money in GameObject.FindGameObjectsWithTag("Collected"))
+        {
+            money.GetComponent<CollectController>().lastOne = other.gameObject;
+        }
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CollectController>().lastOne = other.gameObject;
+
+        other.gameObject.tag = "Collected";
+        other.gameObject.GetComponent<BoxCollider>().isTrigger = false;
+
     }
 }
