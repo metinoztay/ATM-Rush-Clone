@@ -9,10 +9,9 @@ public class Movement : MonoBehaviour
 
     float horizontal;
 
-    
     void Update()
     {
-        if (transform.position.x > 240.7f && transform.position.x < 249.25f)
+        if (transform.position.x > 240.7f && transform.position.x < 249.25f) // Road 
         {
             horizontal = Input.GetAxis("Horizontal");
 

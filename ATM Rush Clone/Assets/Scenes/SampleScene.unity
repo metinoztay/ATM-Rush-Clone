@@ -1690,9 +1690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcedf101f7af32f4db0325e7c76d7294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 963194227}
-  cameraThrow: 9
-  playerThrow: 10
+  turnSpeed: 0.4
 --- !u!65 &372240429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1763,14 +1761,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372240427}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 244.9465, y: -13.193, z: -1593.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.508728, y: -4.456155, z: 157.06323}
   m_LocalScale: {x: 2.9955, y: 1, z: 0.5457}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 887641106}
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 720696892}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &372240433
 Rigidbody:
@@ -2977,9 +2975,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 720696892}
-  - component: {fileID: 720696893}
+  - component: {fileID: 720696894}
   m_Layer: 0
-  m_Name: CrashControllerObject
+  m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2998,10 +2996,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1924050953}
+  - {fileID: 372240432}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &720696893
+--- !u!114 &720696894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3010,9 +3009,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 720696890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8eaef346a4dcca1449fbcdc4c7fdb9a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a9ff6df571baad4abe4aa96d6c310eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 963194227}
+  cameraThrow: 9
+  playerThrow: 10
 --- !u!1 &726253465
 GameObject:
   m_ObjectHideFlags: 0
@@ -4541,6 +4543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 974533394}
   offset: {x: 0, y: 5, z: -1}
+  turnSpeed: 1.7
   gamePosition: {fileID: 1827450172}
 --- !u!1 &974533388
 GameObject:
@@ -4647,7 +4650,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastOne: {fileID: 974533388}
-  material: Money
 --- !u!114 &974533393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8478,7 +8480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fe9fe5a74ffa0b458a8198169fd2a56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 963194227}
 --- !u!54 &1924050949
 Rigidbody:
   m_ObjectHideFlags: 0

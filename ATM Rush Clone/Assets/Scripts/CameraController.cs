@@ -6,9 +6,9 @@ using UnityEngine.UIElements;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform target;
-    public Vector3 offset;
-    float turnSpeed = 1.5f;
+    [SerializeField] Transform target;
+    [SerializeField] Vector3 offset;
+    [SerializeField] float turnSpeed = 1.5f;
     bool start = false; 
 
     [SerializeField] GameObject gamePosition;

@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CollectController : MonoBehaviour
 {
-    public GameObject lastOne;
-    public string material = "Money";
+    [SerializeField] public GameObject lastOne;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collectable"))

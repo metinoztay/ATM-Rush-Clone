@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NodeMovement : MonoBehaviour
 {
-    public Transform connectedNode;
+    [SerializeField] public Transform connectedNode;
     
     void Update()
     {
