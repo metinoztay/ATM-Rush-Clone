@@ -25,12 +25,18 @@ public class CreditCartMove : MonoBehaviour
     {
         if (goLeft)
         {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, transform.position.x - 5, Time.deltaTime), transform.position.y, transform.position.z);
+            transform.position = new Vector3(
+                Mathf.Lerp(transform.position.x, transform.position.x - 5, Time.deltaTime),
+                transform.position.y,
+                transform.position.z);
 
         }
         else
         {
-            transform.position = new Vector3(Mathf.Lerp(transform.position.x, transform.position.x + 5, Time.deltaTime), transform.position.y, transform.position.z);
+            transform.position = new Vector3(
+                Mathf.Lerp(transform.position.x, transform.position.x + 5, Time.deltaTime),
+                transform.position.y,
+                transform.position.z);
         }
 
         if (transform.position.x < 236.5f)
