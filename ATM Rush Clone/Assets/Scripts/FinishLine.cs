@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour
 {
-    [SerializeField] Transform ATM;
-    public float moveSpeedToATM;
+    [SerializeField] float moveSpeedToATM;
 
     private void OnTriggerEnter(Collider other)
     {
-       //Finish lane code 
+        Destroy(other.GetComponent<NodeMovement>());
+        other.GetOrAddComponent<FinishMovement>().movementSpeed = moveSpeedToATM;
+        other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
     }
 
 }

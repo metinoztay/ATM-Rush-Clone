@@ -13,6 +13,7 @@ TagManager:
   - Money
   - Gold
   - Diamond
+  - Obstacle
   layers:
   - Default
   - TransparentFX

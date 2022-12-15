@@ -11,6 +11,6 @@ public class EnemyTurn : MonoBehaviour
     }
     void Update()
     {
-        transform.Rotate(new Vector3(0, turnSpeed, 0));
+        transform.Rotate(0, turnSpeed*Time.deltaTime, 0);
     }
 }
