@@ -9,9 +9,18 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.GetComponent<NodeMovement>());
-        other.GetOrAddComponent<FinishMovement>().movementSpeed = moveSpeedToATM;
-        other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationZ;
+       
+        if (other.CompareTag("Player"))
+        {
+            Destroy(other.GetComponent<Movement>());
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        }
+        else if (other.CompareTag("Collected"))
+        {
+            Destroy(other.GetComponent<NodeMovement>());
+            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z + 2);
+            other.AddComponent<FinishMovement>().movementSpeed = moveSpeedToATM;
+        }
     }
 
 }

@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
         if (!start && Input.GetMouseButtonDown(0))
         {
             start = true;
-            target.gameObject.GetComponentInParent<Movement>().movementSpeed = 7f;
+            target.gameObject.GetComponentInParent<Movement>().movementSpeed = 15f; // normal = 7
         }
         else if (start)
         {

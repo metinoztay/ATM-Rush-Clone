@@ -8,7 +8,6 @@ public class ATMController : MonoBehaviour
     [SerializeField] TextMeshPro counter;
     private int count;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Collected"))
