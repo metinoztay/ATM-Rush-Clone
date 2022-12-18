@@ -1,11 +1,12 @@
 using Newtonsoft.Json.Bson;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CreditCartMove : MonoBehaviour
+public class CreditCardMove : MonoBehaviour
 {
     
     bool goLeft = true;
@@ -17,26 +18,18 @@ public class CreditCartMove : MonoBehaviour
     }
     void Update()
     {
-        CreditCardMove();
+        CardMove();
     }
 
-
-    private void CreditCardMove()
+    private void CardMove()
     {
         if (goLeft)
         {
-            transform.position = new Vector3(
-                Mathf.Lerp(transform.position.x, transform.position.x - 5, Time.deltaTime),
-                transform.position.y,
-                transform.position.z);
-
+            GoLeft();
         }
         else
         {
-            transform.position = new Vector3(
-                Mathf.Lerp(transform.position.x, transform.position.x + 5, Time.deltaTime),
-                transform.position.y,
-                transform.position.z);
+            GoRight();
         }
 
         if (transform.position.x < 236.5f)
@@ -49,4 +42,20 @@ public class CreditCartMove : MonoBehaviour
         }
     }
 
+    private void GoLeft()
+    {
+
+        transform.position = new Vector3(
+            Mathf.Lerp(transform.position.x, transform.position.x - 5, Time.deltaTime),
+            transform.position.y,
+            transform.position.z);
+    }
+
+    private void GoRight()
+    {
+        transform.position = new Vector3(
+               Mathf.Lerp(transform.position.x, transform.position.x + 5, Time.deltaTime),
+               transform.position.y,
+               transform.position.z);
+    }
 }
