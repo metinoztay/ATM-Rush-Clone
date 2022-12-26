@@ -19,11 +19,12 @@ public class NodeMovement : MonoBehaviour
         }
         catch (System.Exception)
 		{
-            //this area for break line code
             return;
 			throw;
 		}
         
 
     }
+
+   
 }
