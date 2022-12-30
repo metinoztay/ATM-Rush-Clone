@@ -16,7 +16,7 @@ public class CrashController : MonoBehaviour
         }
         else if (other.CompareTag("Collected"))
         {
-            Spread(other);
+            BreakApart(other);
             SetLastOne(other.GetComponent<NodeMovement>().connectedNode.gameObject);
             Destroy(other.gameObject);            
         }
@@ -46,12 +46,11 @@ public class CrashController : MonoBehaviour
 
     }
 
-    private void Spread(Collider other)
+    private void BreakApart(Collider other)
     {
         GameObject[] collecteds = GameObject.FindGameObjectsWithTag("Collected");
         foreach (GameObject collected in collecteds)
         {
-            Rigidbody rb = collected.GetComponent<Rigidbody>();
 
             if (collected.transform.position.z > other.transform.position.z)
             {
@@ -60,16 +59,10 @@ public class CrashController : MonoBehaviour
                 collected.GetComponent<BoxCollider>().isTrigger = true;
                 collected.gameObject.tag = "Collectable";
 
-                if (rb != null)
-                {
-                    collected.transform.position = new Vector3(Random.Range(240.7f, 249.25f), -13.5f, collected.transform.position.z + Random.Range(1.0f, 5.0f));
+                
+                collected.transform.position = new Vector3(Random.Range(240.7f, 249.25f), -13.5f, collected.transform.position.z + Random.Range(1.0f, 5.0f));
 
-                    // Daðýlma hýzý için verilebilir
-                    //rb.velocity = new Vector3(Random.Range(-10.0f, 10.0f), 0.0f, Random.Range(-10.0f, 10.0f));
-                }
             }
-
-           
         }
     }
 
