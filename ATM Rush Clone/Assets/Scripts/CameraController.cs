@@ -20,14 +20,14 @@ public class CameraController : MonoBehaviour
         if (!start && Input.GetMouseButtonDown(0))
         {
             start = true;
-            target.gameObject.GetComponentInParent<Movement>().movementSpeed = 15f;
+            target.gameObject.GetComponentInParent<Movement>().movementSpeed = 7f;
         }
         else if (start)
         {
 
             transform.rotation = Quaternion.Lerp(transform.rotation, gamePosition.transform.rotation, Time.deltaTime * turnSpeed);
             
-            transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime*3.5f);
+            transform.position = Vector3.Lerp(transform.position, target.position + offset, Time.deltaTime*5f);
         }
     }
 

@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class CreditCardMove : MonoBehaviour
 {
-    
+    public float moveSpeed;
     bool goLeft = true;
 
 
@@ -46,7 +46,7 @@ public class CreditCardMove : MonoBehaviour
     {
 
         transform.position = new Vector3(
-            Mathf.Lerp(transform.position.x, transform.position.x - 5, Time.deltaTime),
+            Mathf.Lerp(transform.position.x, transform.position.x - moveSpeed, Time.deltaTime),
             transform.position.y,
             transform.position.z);
     }
@@ -54,7 +54,7 @@ public class CreditCardMove : MonoBehaviour
     private void GoRight()
     {
         transform.position = new Vector3(
-               Mathf.Lerp(transform.position.x, transform.position.x + 5, Time.deltaTime),
+               Mathf.Lerp(transform.position.x, transform.position.x + moveSpeed, Time.deltaTime),
                transform.position.y,
                transform.position.z);
     }

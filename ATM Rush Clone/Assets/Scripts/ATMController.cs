@@ -13,7 +13,7 @@ public class ATMController : MonoBehaviour
         if (other.CompareTag("Collected"))
         {
             Deposit(other);
-            BreakApart(other);
+            GameObject.Find("Obstacles").GetComponent<CrashController>().BreakApart(other);
         }
         else if (other.CompareTag("Player"))
         {
@@ -59,23 +59,6 @@ public class ATMController : MonoBehaviour
                 ATM.GetComponent<ATMController>().count++;
             }
 
-        }
-    }
-    private void BreakApart(Collider other)
-    {
-        GameObject[] collecteds = GameObject.FindGameObjectsWithTag("Collected");
-        foreach (GameObject collected in collecteds)
-        {
-
-            if (collected.transform.position.z > other.transform.position.z)
-            {
-                Destroy(collected.GetComponent<NodeMovement>());
-                Destroy(collected.GetComponent<CollectController>());
-                collected.GetComponent<BoxCollider>().isTrigger = true;
-                collected.gameObject.tag = "Collectable";
-
-                collected.transform.position = new Vector3(Random.Range(240.7f, 249.25f), -13.5f, collected.transform.position.z + Random.Range(1.0f, 5.0f));
-            }
         }
     }
 }

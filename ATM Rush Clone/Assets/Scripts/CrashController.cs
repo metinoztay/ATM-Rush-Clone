@@ -46,7 +46,7 @@ public class CrashController : MonoBehaviour
 
     }
 
-    private void BreakApart(Collider other)
+    public void BreakApart(Collider other)
     {
         GameObject[] collecteds = GameObject.FindGameObjectsWithTag("Collected");
         foreach (GameObject collected in collecteds)
@@ -60,7 +60,7 @@ public class CrashController : MonoBehaviour
                 collected.gameObject.tag = "Collectable";
 
                 
-                collected.transform.position = new Vector3(Random.Range(240.7f, 249.25f), -13.5f, collected.transform.position.z + Random.Range(1.0f, 5.0f));
+                collected.transform.position = new Vector3(Random.Range(240.7f, 249.25f), -35.6681f, collected.transform.position.z + Random.Range(1.0f, 5.0f));
 
             }
         }
